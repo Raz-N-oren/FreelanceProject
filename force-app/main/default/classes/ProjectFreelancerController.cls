@@ -14,10 +14,12 @@ public with sharing class ProjectFreelancerController {
                 WHERE (Electricity__c = :project.Electricity__c 
                        AND Driving_License__c = :project.Driving_License__c
                        AND Cargo_Shipment__c = :project.Cargo_Shipment__c
-                       AND Mechanical__c = :project.Mechanical__c)];
-                       if(!matchedFreelancers.isEmpty()){
-                           return matchedFreelancers;
-                       } 
+                       AND Mechanical__c = :project.Mechanical__c)
+                       AND Available__c= true];
+
+            if(!matchedFreelancers.isEmpty()){
+                return matchedFreelancers;
+            } 
 
         }
         list<Freelance__c> emptyList = new List<Freelance__c>();
