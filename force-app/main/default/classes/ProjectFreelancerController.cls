@@ -16,13 +16,16 @@ public with sharing class ProjectFreelancerController {
                        AND Cargo_Shipment__c = :project.Cargo_Shipment__c
                        AND Mechanical__c = :project.Mechanical__c)
                        AND Available__c= true];
+            System.debug('matchedFreelancers'+matchedFreelancers);
 
             if(!matchedFreelancers.isEmpty()){
                 return matchedFreelancers;
             } 
 
         }
+        
         list<Freelance__c> emptyList = new List<Freelance__c>();
+        System.debug('emptyList'+emptyList);
         return emptyList;
 
     }

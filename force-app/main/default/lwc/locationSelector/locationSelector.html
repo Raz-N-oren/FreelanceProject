@@ -1,0 +1,40 @@
+<template>
+    <div>
+        <lightning-combobox
+            name="location"
+            label="Select Location"
+            options={locationOptions}
+            onchange={handleLocationChange}>
+        </lightning-combobox>
+
+        <template if:true={showProjects}>
+            <!-- Projects Table -->
+            <div class="datatable-container">
+
+            <lightning-datatable
+                key-field="Id"
+                data={projectsData}
+                columns={projectColumns}>
+            </lightning-datatable>
+        </div>
+        </template>
+        
+        <template if:true={showFreelancers}>
+            <!-- Freelancers Table -->
+            <lightning-datatable
+                key-field="Id"
+                data={freelancersData}
+                columns={freelancerColumns}>
+            </lightning-datatable>
+        </template>
+
+        <template if:true={showNoMatchedProjectsFound}>
+            <div>No Matched projects found.</div>
+        </template>
+
+        <template if:true={showNoMatchedFreelancesFound}>
+            <div>No Matched freelancers found.</div>
+        </template>
+
+    </div>
+</template>

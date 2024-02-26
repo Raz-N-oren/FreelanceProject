@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Suggested Freelancers" icon-name="standard:people">
+        <template if:true={freelancers}>
+            <lightning-datatable
+                key-field="Id"
+                data={freelancers}
+                columns={columns}
+                hide-checkbox-column="true"
+                onrowaction={navigateToFreelancerRecord}>
+            </lightning-datatable>
+        </template>
+        <template if:false={freelancers}>
+            No suggested freelancers found.
+        </template>
+    </lightning-card>
+    <lightning-button label="Create Freelance" onclick={createFreelance}></lightning-button>
+
+</template>
