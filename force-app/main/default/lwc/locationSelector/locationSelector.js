@@ -83,33 +83,4 @@ export default class LocationSelector extends LightningElement {
         }).catch(error => console.log("getFreelancers error:", JSON.stringify(error)));
     }
 
-    // @wire(getProjectsByLocation, { location: '$selectedLocation' })
-    // loadProjects({ error, data }) {
-    //     console.log("data in getProjectsByLocation",data);
-    //     console.log("error in getProjectsByLocation",error);
-    //     if (data) {
-    //         this.projectsData = data;
-    //         this.showProjects = true;
-    //         console.log("this.projectsData",this.projectsData);
-    //         console.log("this.showProjects",this.showProjects);
-
-    //     } else if (error) {
-    //         console.error('Error fetching projects: ', error);
-    //     }
-    // }
-
-    // @wire(getFreelancersByLocation, { location: '$selectedLocation' })
-    // loadFreelancers({ error, data }) {
-    //     console.log("data in getFreelancersByLocation",data);
-    //     console.log("error in getFreelancersByLocation",error);
-    //     if (data) {
-    //         this.freelancersData = data;
-    //         this.showFreelancers = true;
-    //         console.log("this.freelancersData",this.freelancersData);
-    //         console.log("this.showFreelancers",this.showFreelancers);
-    //     } else if (error) {
-    //         console.error('Error fetching freelancers: ', error);
-    //     }
-    // }
-
 }

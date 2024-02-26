@@ -25,9 +25,7 @@ export default class ProjectFreelancerSuggestions extends NavigationMixin(Lightn
         typeAttributes: {
             label: { fieldName: 'Name' },
             name: 'viewFreelancer',
-            title: 'Click to view details', // Optional
-            variant: 'base', // Optional
-            alternativeText: 'View' // Optional
+            variant: 'base', 
         } },
         { label: 'Hourly Rate', fieldName: 'Hourly_Rate__c', type: 'currency', sortable: true },
         { label: 'Location', fieldName: 'Location__c', type: 'text', sortable: true },
@@ -49,7 +47,6 @@ export default class ProjectFreelancerSuggestions extends NavigationMixin(Lightn
                 });
                 break;
             default:
-                // Handle other actions if needed
                 break;
         }
     }
