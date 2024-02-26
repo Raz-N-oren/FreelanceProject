@@ -41,6 +41,9 @@ export default class LocationSelector extends LightningElement {
         this.selectedLocation = event.detail.value;
         this.showFreelancers = false;
         this.showProjects = false;
+        this.showNoMatchedFreelancesFound = false;
+        this.showNoMatchedFreelancesFound = false;
+
         console.log("this.selectedLocation",this.selectedLocation);
 
         if(this.selectedLocation){
@@ -54,14 +57,12 @@ export default class LocationSelector extends LightningElement {
             if(result.length > 0){
 
                 this.showNoMatchedProjectsFound = false;
-                this.showNoMatchedFreelancesFound = false;
                 console.log("getProjectsByLocation results:",JSON.stringify(result));
                 this.projectsData = result;
                 this.showProjects = true;
             }
             else{
                 this.showNoMatchedProjectsFound = true;
-                this.showNoMatchedFreelancesFound = true;
             }
 
 
@@ -72,14 +73,11 @@ export default class LocationSelector extends LightningElement {
         getFreelancersByLocation({ location: this.selectedLocation }).then(result => {
           console.log("getFreelancers results:",JSON.stringify(result));
           if(result.length > 0){
-
-            this.showNoMatchedProjectsFound = false;
             this.showNoMatchedFreelancesFound = false;
             this.freelancersData = result;
             this.showFreelancers = true;
           }
           else{
-            this.showNoMatchedProjectsFound = true;
             this.showNoMatchedFreelancesFound = true;
           }
         }).catch(error => console.log("getFreelancers error:", JSON.stringify(error)));
