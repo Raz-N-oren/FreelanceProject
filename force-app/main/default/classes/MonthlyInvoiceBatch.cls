@@ -8,7 +8,7 @@ public with sharing class MonthlyInvoiceBatch implements Database.Batchable<SObj
         String query = 'SELECT Freelance_in_Project__r.Freelance__c, Freelance_in_Project__r.Project__c, SUM(Hours__c) totalHours ' +
                        'FROM Billable_Hours__c ' +
                        'WHERE Status__c = \'Approved\' AND Month_Date__c >= :firstDayOfMonth AND Month_Date__c <= :lastDayOfMonth' +
-                       'GROUP BY Freelance_in_Project__r.Freelance__c, Freelance_in_Project__r.Project__c';
+                       'GROUP BY Freelance_in_Project__r.Freelance__c, Freelance_in_Project__r.Project__c HAVING SUM(Hours__c) > 0';
 
         return Database.getQueryLocator(query);
     }
