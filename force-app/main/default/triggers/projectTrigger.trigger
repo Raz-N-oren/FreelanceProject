@@ -4,6 +4,7 @@
      */
     trigger projectTrigger on Project__c (before update, after update) {
 
+        // Instantiate ProjectHandeler object to handle project-related operations
         ProjectHandelr ProjectHandeler= new ProjectHandelr(Trigger.operationType);
     
     }
